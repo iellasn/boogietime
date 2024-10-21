@@ -3,13 +3,14 @@ import Settings from './Settings';
 import Timer from './Timer';
 import { useState } from 'react';
 import backgroundImage from './boogie.jpeg';
+import GenreSelector from './GenreSelector';
 
 
 function App() {
 
   const [showSettings, setShowSettings] = useState(false);
   return (
-    <div style={{
+    <div className = "app-container "style={{
       backgroundImage: `url(${backgroundImage})`,
       backgroundSize: 'cover', // Cover the entire viewport
       backgroundPosition: 'center', // Center the background image
@@ -19,7 +20,7 @@ function App() {
     }}>
       <main> 
         {showSettings ? <Settings /> : <Timer />}
-        </main>
+    </main>
     </div>
   );
 }

@@ -4,10 +4,15 @@ body{
 }
 
 main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-top: 50px;
   max-width: 340px; 
   margin: 0 auto;
   text-align: center;
+  min-height: 100vh;
 }
 
 button{
@@ -36,4 +41,12 @@ button.with-text svg{
 
 label{
   display: block;
+}
+@font-face {
+  font-family: 'Kablammo';
+  src: url('Kablammo-Regular-VariableFont_MORF.ttf');
+}
+
+.Kablammo{
+  font-family: 'Kablammo'
 }

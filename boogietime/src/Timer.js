@@ -39,21 +39,24 @@ function Timer(){
     const secs = seconds % 60; 
 
     return (
-        <div>
+        <div className='Kablammo'>
+            <div style={{ width: '250px', height: '250px', marginBottom: '250px' }}>
             <CircularProgressbar 
                 value={percentage} 
                 text={`${percentage.toFixed(0)}%`} 
                 styles = {buildStyles({
                     textColor: '#fff',
-                    pathColor: 'red',
-                    tailColor:'rgba(255,255,255,.2)',
+                    textShadow: '0px 0px 4px #000',
+                    pathColor: percentage > 50 ? red : green,
+                    tailColor:'rgba(0,0,0,.2)',
                 })}
             />
-            <div style={{marginTop:'20px', fontSize: '24px', textAlign: 'center', color: '#fff'}}>
+            </div>
+            <div style={{marginTop:'-100px', fontSize: '65px', textAlign: 'center', color: '#fff'}}>
                 {`${minutes}:${secs < 10 ? `0${secs}` : secs}`} {/* Formats the seconds to always be two digits */}
             </div>
             <div style={{marginTop:'20px'}}>
-                {isActive ? (
+                {!isActive ? (
                     <PlayButton onClick = {toggle} />
                 ) : (
                     <PauseButton onClick = {toggle} />
